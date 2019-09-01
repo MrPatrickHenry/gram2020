@@ -14,3 +14,20 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Auth::routes();
+ 
+Route::group(['middleware' => ['auth']], function(){
+ 
+    Route::get('/', 'AppController@index');
+ 
+    Route::get('/search', 'AppController@search');
+ 
+    Route::get('/instagram', 'InstagramController@redirectToInstagramProvider');
+ 
+    Route::get('/instagram/callback', 'InstagramController@handleProviderInstagramCallback');
+});
+
+Route::group(['middleware' => ['auth', 'instagram']], function(){
+    // routes
+});
