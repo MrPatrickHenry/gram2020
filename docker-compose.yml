@@ -1,0 +1,24 @@
+version: '2'
+services:
+  web:
+    image: "padster83/centos7-php7-laravel"
+    restart: always
+    ports:
+      - "8080:80"
+      - "4434:443"
+    links:
+      - mariadb
+    volumes:
+      - ./Source:/var/www/html
+
+  mariadb:
+    container_name: 2020_mariadb
+    restart: always
+    image: mariadb
+    ports:
+      - "6603:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: my-secret-pw
+      MYSQL_DATABASE: twentytwenty
+      MYSQL_USER: twentytwentydb
+      MYSQL_PASSWORD: 4]R|X:w}m_14[!>}
