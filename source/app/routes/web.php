@@ -22,10 +22,9 @@ Route::group(['middleware' => ['auth']], function(){
     Route::get('/', 'AppController@index');
  
     Route::get('/search', 'AppController@search');
- 
-    Route::get('/instagram', 'InstagramController@redirectToInstagramProvider');
- 
-    Route::get('/instagram/callback', 'InstagramController@handleProviderInstagramCallback');
+  
+    Route::get('/instagram/callback/', 'InstagramController@Index');
+
 });
 
 Route::group(['middleware' => ['auth', 'instagram']], function(){
