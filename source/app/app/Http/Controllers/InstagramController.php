@@ -78,7 +78,7 @@ foreach($userMediaResponseArray->data as $res) {
     $sum += $res->likes->count;
 }
 
-dd($countArray);
+dd($sum);
 
 
 
