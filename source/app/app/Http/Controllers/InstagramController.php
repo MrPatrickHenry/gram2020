@@ -83,7 +83,7 @@ foreach($userMediaResponseArray->data as $res) {
 
 $EngagementRate = 0;
 
-$EngagementRate = $likes + $comments / $igFollowedBy * 100 ;
+$EngagementRate = ($likes + $comments) / $igFollowedBy ;
 
 
 dd($EngagementRate);
