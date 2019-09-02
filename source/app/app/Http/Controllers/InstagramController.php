@@ -85,8 +85,7 @@ $EngagementRate = 0;
 
 $EngagementRate = $likes + $comments / $igFollowedBy * 100 / 10 ;
 
-
-dd($EngagementRate);
+return ($likes, $comments, $igFollowedBy);
 
 
    }
