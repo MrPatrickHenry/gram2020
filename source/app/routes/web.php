@@ -16,17 +16,5 @@ Route::get('/', function () {
 });
 
 Auth::routes();
- 
-Route::group(['middleware' => ['auth']], function(){
- 
-    Route::get('/', 'AppController@index');
- 
-    Route::get('/search', 'AppController@search');
-  
-    Route::get('/instagram/callback/', 'InstagramController@Index');
 
-});
-
-Route::group(['middleware' => ['auth', 'instagram']], function(){
-    // routes
-});
+Route::get('/home', 'HomeController@index')->name('home');
