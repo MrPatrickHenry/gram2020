@@ -69,11 +69,15 @@ class InstagramController extends Controller
        $UserMediaResponse = $requestUserMediaData->getBody()->getContents();
        $userMediaResponseArray = json_decode($UserMediaResponse);
 
-$flattened = Arr::flatten($userMediaResponseArray);
-       $igCounts = data_get($flattened, 'likes.count', 0);
+// $flattened = Arr::flatten($userMediaResponseArray);
+ 
 
-$names = Arr::pluck($userMediaResponseArray, 'likes.count');
-return ($flattened);
+foreach($userMediaResponseArray->data as $res) {
+echo "Title".$res->likes->count."\n";
+}
+
+
+
    }
 
     /**
