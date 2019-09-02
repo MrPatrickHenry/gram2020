@@ -71,15 +71,22 @@ class InstagramController extends Controller
 
 // $flattened = Arr::flatten($userMediaResponseArray);
  
-$sum = 0;
-
+$likes = 0;
+$comments = 0;
 foreach($userMediaResponseArray->data as $res) {
 
-    $sum += $res->likes->count;
+    $likes += $res->likes->count;
+    $comments += $res->comments->count;
 }
 
-dd($sum);
+// Engagement Rate Calculator
 
+$EngagementRate = 0;
+
+$EngagementRate = $likes + $comments / $igFollowedBy * 100 ;
+
+
+dd($EngagementRate);
 
 
    }
