@@ -71,10 +71,11 @@ class InstagramController extends Controller
 
 // $flattened = Arr::flatten($userMediaResponseArray);
  
-$countArray = 0;
+$sum = 0;
 
 foreach($userMediaResponseArray->data as $res) {
- $countArray +  $res->likes->count;
+
+    $sum += $res->likes->count;
 }
 
 dd($countArray);
