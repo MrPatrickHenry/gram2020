@@ -29,7 +29,7 @@ class InstagramController extends Controller
         'form_params' => [
             'client_secret' => '074c37b7b8794cbab25d58f5feabf1cc',
             'client_id' => '16b479bb667f424fb1bcb1c8dae8cf9f',
-            'redirect_uri' => 'http://127.0.0.1:8000/instagram/callback/',
+            'redirect_uri' => 'https://20-twenty.online/instagram/callback/',
             'code' => $igCode,
             'grant_type' => 'authorization_code'
         ]
