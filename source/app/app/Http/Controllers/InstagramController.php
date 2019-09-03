@@ -7,7 +7,8 @@ use DB;
 use GuzzleHttp\Client;
 use Illuminate\Support\Arr;
 use Auth;   
-use Carbon\Carbon
+use Carbon\Carbon;
+
 class InstagramController extends Controller
 {
     /**
