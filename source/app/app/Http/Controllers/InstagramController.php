@@ -121,9 +121,7 @@ $now = Carbon::now()->toDateTimeString();
              'engagementRate'=> $varDump
             ]);
 
-dd($saveIGData);
-
-    }
+return Redirect::route('rates');    }
 
     /**
      * Display the specified resource.
