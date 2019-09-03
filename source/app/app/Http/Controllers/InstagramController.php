@@ -105,7 +105,7 @@ class InstagramController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store($likes $igFollowedBy $igMediaPosts $engagementRate)
+    public function store($likes, $igFollowedBy, $igMediaPosts, $engagementRate)
     {
      
      $saveIGData =  DB::table('ig')->insert(
