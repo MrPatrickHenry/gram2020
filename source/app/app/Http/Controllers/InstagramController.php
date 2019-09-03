@@ -6,7 +6,8 @@ use Illuminate\Http\Request;
 use DB;
 use GuzzleHttp\Client;
 use Illuminate\Support\Arr;
-
+use Auth;   
+use Carbon\Carbon
 class InstagramController extends Controller
 {
     /**
@@ -107,8 +108,13 @@ return $this->store($likes, $igFollowedBy, $igMediaPosts, $varDump);
     public function store($likes, $igFollowedBy, $igMediaPosts, $varDump)
     {
      
+$currentuserid = Auth::user()->id;
+$now = Carbon::now()->toDateTimeString();
      $saveIGData =  DB::table('ig')->insert(
             ['likes' => $likes,
+            'userID' => $currentuserid,
+            'updated_at' => $now,
+            'curated_at' => $now,
              'followers' => $igFollowedBy, 
              'posts'=>$igMediaPosts,
              'engagementRate'=> $varDump
