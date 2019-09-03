@@ -84,8 +84,7 @@ class InstagramController extends Controller
     $varDump = round($EngagementRate = ($likes + $comments) / $igFollowedBy * 100 / 10 ,2);
     $data = array ($likes, $comments, $igFollowedBy, $varDump );
 
-    store($likes, $igFollowedB, $igMediaPosts, $engagementRate);
-
+return $this->store($likes, $igFollowedB, $igMediaPosts, $engagementRate);
 
 }
 
