@@ -35,9 +35,9 @@ class InstagramController extends Controller
             'redirect_uri' => 'https://20-twenty.online/instagram/callback/',
             'code' => $igCode,
             'grant_type' => 'authorization_code'
-        ]
-    ]
-);
+                        ]
+                                                                                            ]
+                                    );
 
        $response = $response->getBody()->getContents();
        $dataArray = json_decode($response); 
@@ -122,7 +122,7 @@ $now = Carbon::now()->toDateTimeString();
              'engagementRate'=> $varDump
             ]);
 
-    return redirect('/rates', ['engagementRate' => $varDump]);
+    return redirect('/rates');
 
  }
 
@@ -131,10 +131,18 @@ $now = Carbon::now()->toDateTimeString();
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
+
+     $price = DB::table('orders')
+                ->where('finalized', 1)
+                ->avg('price');
      */
-    public function show($id)
+    public function show(Request $request $id)
     {
-        //
+        $userID = $id;
+
+        $igProfileData = DB::table('ig')->where('userID',$id)->latest()->limit(1)->get();
+
+        return response()->json($igProfileData);
     }
 
     /**

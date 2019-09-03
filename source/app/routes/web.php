@@ -25,6 +25,9 @@ Route::group(['middleware' => ['auth']], function(){
  
     Route::get('/instagram/callback/', 'InstagramController@Index');
 
+Route::post('user/profile/instagram', 'InstagramController@show');
+
+
 Route::get('/rates', function () {
     return view('rates');
 });
