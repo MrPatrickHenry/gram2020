@@ -122,7 +122,7 @@ $now = Carbon::now()->toDateTimeString();
              'engagementRate'=> $varDump
             ]);
 
-    return redirect('/rates');
+    return redirect('/rates', ['engagementRate' => $varDump]);
 
  }
 

@@ -14,7 +14,7 @@
                         </div>
                     @endif
 
-Congratulations your rate is:
+Congratulations your rate is: {{ $engagementRate }}
                     
 <!-- if statement around here -->
                     <div class="container app">
