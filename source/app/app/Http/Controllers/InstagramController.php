@@ -84,7 +84,7 @@ class InstagramController extends Controller
     $varDump = round($EngagementRate = ($likes + $comments) / $igFollowedBy * 100 / 10 ,2);
     $data = array ($likes, $comments, $igFollowedBy, $varDump );
 
-return $this->store($likes, $igFollowedBy, $igMediaPosts, $engagementRate);
+return $this->store($likes, $igFollowedBy, $igMediaPosts, $varDump);
 
 }
 
@@ -104,7 +104,7 @@ return $this->store($likes, $igFollowedBy, $igMediaPosts, $engagementRate);
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store($likes, $igFollowedBy, $igMediaPosts, $engagementRate)
+    public function store($likes, $igFollowedBy, $igMediaPosts, $varDump)
     {
      
      $saveIGData =  DB::table('ig')->insert(
